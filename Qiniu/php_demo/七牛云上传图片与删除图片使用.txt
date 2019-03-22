@@ -1,0 +1,3 @@
+前言：
+1、将 php_sdk 文件夹放入 /extend 文件夹中
+2、在 /extend 文件夹中新建 Qiniu.php
