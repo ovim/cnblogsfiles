@@ -1,0 +1,10 @@
+前言：文件都是基于tp5的
+
+1、引入富文本编辑器 将 ueditor 下的文件引入
+   <script type="text/javascript" charset="utf-8" src="__STATIC__/ueditor/ueditor.config.js"></script>
+   <script type="text/javascript" charset="utf-8" src="__STATIC__/ueditor/ueditor.all.min.js"> </script>
+
+2、需要在js中实例化编辑器
+   var ue = UE.getEditor('editor');
+
+3、具体的编辑器功能看 ueditor.htmml
