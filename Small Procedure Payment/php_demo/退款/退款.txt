@@ -1,0 +1,17 @@
+    function delwx($data,$wepay_serial,$out_trade_no,$allWages) {
+        $mchid = '1515808951';          //微信支付商户号 PartnerID 通过微信支付商户资料审核后邮件发送
+        $appid = 'wxfe6301be32214279';  //微信支付申请对应的公众号的APPID
+        $apiKey = 'XSzCRf9aFGofkMLeMoSOAyeQuIuv6kRx';   //https://pay.weixin.qq.com 帐户设置-安全设置-API安全-API密钥-设置API密钥
+        $orderNo = $out_trade_no;                      //商户订单号（商户订单号与微信订单号二选一，至少填一个）
+        $wxOrderNo = $wepay_serial;                     //微信订单号（商户订单号与微信订单号二选一，至少填一个）
+        $totalFee = $allWages;                   //订单金额，单位:元
+        $refundFee = $data;                  //退款金额，单位:元
+        $refundNo = 'refund_'.uniqid();        //退款订单号(可随机生成)
+        $wxPay = new Wxpayservice($mchid,$appid,$apiKey);
+        $result = $wxPay->doRefund($totalFee, $refundFee, $refundNo, $wxOrderNo,$orderNo);
+        if($result){
+            return true;
+        }else{
+            return false;
+        }
+    }
