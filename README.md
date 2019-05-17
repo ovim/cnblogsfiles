@@ -1,2 +1,3 @@
 # cnblogsfiles
-Personal blog files
+
+基于thinkphp5的excel上传（按照固定的excel模板编辑excel，上传之后在mysql数据库中建立新表，新表的所有信息存在于上传的excel表格中）
